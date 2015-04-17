@@ -1,0 +1,15 @@
+Library
+Temp
+*.sln
+*.csproj
+*.unityproj
+*.pidb
+*.userprefs
+Builds
+UnityVS.shooting.v12.suo
+Assets/UnityVS/Editor/UnityVS.VersionSpecific.dll
+Assets/UnityVS/Editor/UnityVS.VersionSpecific.dll.meta
+UnityVS.shooting.sln.DotSettings
+obj/
+UnityVS.Hue Mouse.v12.suo
+UnityVS.fly-que-quer-a-paz-que-o-inimigo-destroi.v12.suo
