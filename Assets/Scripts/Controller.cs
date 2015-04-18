@@ -4,7 +4,7 @@ using System.Collections;
 public class Controller : MonoBehaviour 
 {
 
-    float playerSpeed = 10;
+    float playerSpeed = 3;
 
 	void Update () 
     {
@@ -14,25 +14,35 @@ public class Controller : MonoBehaviour
 
     void Move()
     {
-        if(Input.GetKey("up"))
+        if(Input.GetAxis("Horizontal") != 0)
         {
-            transform.Translate(0, playerSpeed * Time.deltaTime, 0, Space.World);
+            transform.Translate(playerSpeed * Input.GetAxis("Horizontal") * Time.deltaTime, 0, 0, Space.World);
         }
 
-        if(Input.GetKey("down"))
+        if(Input.GetAxis("Vertical") != 0)
         {
-            transform.Translate(0, -playerSpeed * Time.deltaTime, 0, Space.World);
+            transform.Translate(0, playerSpeed * Input.GetAxis("Vertical") * Time.deltaTime, 0, Space.World);
         }
 
-        if(Input.GetKey("left"))
-        {
-            transform.Translate(-playerSpeed * Time.deltaTime, 0, 0, Space.World);
-        }
+    //    if(Input.GetKey("up"))
+    //    {
+    //        transform.Translate(0, playerSpeed * Time.deltaTime, 0, Space.World);
+    //    }
 
-        if(Input.GetKey("right"))
-        {
-            transform.Translate(playerSpeed * Time.deltaTime, 0, 0, Space.World);
-        }
+    //    if(Input.GetKey("down"))
+    //    {
+    //        transform.Translate(0, -playerSpeed * Time.deltaTime, 0, Space.World);
+    //    }
+
+    //    if(Input.GetKey("left"))
+    //    {
+    //        transform.Translate(-playerSpeed * Time.deltaTime, 0, 0, Space.World);
+    //    }
+
+    //    if(Input.GetKey("right"))
+    //    {
+    //        transform.Translate(playerSpeed * Time.deltaTime, 0, 0, Space.World);
+    //    }
     }
 
     void Rotate()
