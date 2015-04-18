@@ -3,46 +3,28 @@ using System.Collections;
 
 public class Controller : MonoBehaviour 
 {
+    Rigidbody2D myRigidbody;
+    public float playerSpeed = 3;
 
-    float playerSpeed = 3;
+    void Start ()
+    {
+        myRigidbody = GetComponent<Rigidbody2D>();
+    }
 
 	void Update () 
     {
-        Move();
         Rotate();
 	}
 
+    void FixedUpdate()
+    {
+        Move();
+    }
+
     void Move()
     {
-        if(Input.GetAxis("Horizontal") != 0)
-        {
-            transform.Translate(playerSpeed * Input.GetAxis("Horizontal") * Time.deltaTime, 0, 0, Space.World);
-        }
-
-        if(Input.GetAxis("Vertical") != 0)
-        {
-            transform.Translate(0, playerSpeed * Input.GetAxis("Vertical") * Time.deltaTime, 0, Space.World);
-        }
-
-    //    if(Input.GetKey("up"))
-    //    {
-    //        transform.Translate(0, playerSpeed * Time.deltaTime, 0, Space.World);
-    //    }
-
-    //    if(Input.GetKey("down"))
-    //    {
-    //        transform.Translate(0, -playerSpeed * Time.deltaTime, 0, Space.World);
-    //    }
-
-    //    if(Input.GetKey("left"))
-    //    {
-    //        transform.Translate(-playerSpeed * Time.deltaTime, 0, 0, Space.World);
-    //    }
-
-    //    if(Input.GetKey("right"))
-    //    {
-    //        transform.Translate(playerSpeed * Time.deltaTime, 0, 0, Space.World);
-    //    }
+            Vector2 vel = new Vector2(playerSpeed * Input.GetAxis("Horizontal"), playerSpeed * Input.GetAxis("Vertical"));
+            myRigidbody.velocity = vel;
     }
 
     void Rotate()
