@@ -1,13 +1,13 @@
 fileFormatVersion: 2
 guid: 77329a22e243b9e4c8b09066a57cb175
-timeCreated: 1429419898
+timeCreated: 1429464809
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
     21300000: Inner
     21300002: Outter
     21300004: BEAM
-    21300006: BARREL
+    21300006: BOX
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -83,13 +83,13 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: BARREL
+    - name: BOX
       rect:
         serializedVersion: 2
-        x: 0
-        y: 10
-        width: 1288
-        height: 1288
+        x: 30
+        y: 30
+        width: 1305
+        height: 1304
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
