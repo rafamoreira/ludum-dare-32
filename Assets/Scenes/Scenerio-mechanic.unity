@@ -1081,9 +1081,13 @@ Prefab:
       propertyPath: m_RootOrder
       value: 9
       objectReference: {fileID: 0}
-    - target: {fileID: 183780, guid: f9859a6ead42f7847a30bb28e07b53d8, type: 2}
-      propertyPath: m_Name
-      value: Enemy
+    - target: {fileID: 494428, guid: f9859a6ead42f7847a30bb28e07b53d8, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: .70710659
+      objectReference: {fileID: 0}
+    - target: {fileID: 494428, guid: f9859a6ead42f7847a30bb28e07b53d8, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: -.707106948
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f9859a6ead42f7847a30bb28e07b53d8, type: 2}
