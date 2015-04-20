@@ -12,6 +12,7 @@ public class Health : MonoBehaviour {
     GameManager gameManager;
     bool isAlive;
     EnemyFollow enemyFollow;
+	Animator anim;
 
 	// Use this for initialization
 	void Start () 
@@ -22,6 +23,8 @@ public class Health : MonoBehaviour {
         isAlive = true;
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         enemyFollow = GetComponent<EnemyFollow>();
+        
+        anim = GetComponentInChildren<Animator>();
 	}
 	
 	// Update is called once per frame
@@ -44,8 +47,8 @@ public class Health : MonoBehaviour {
         isAlive = false;
         enemyFollow.isAlive = false;
         
-        // adicionar codigo para animação
-        yield return new WaitForSeconds(3); // setar o tempo correto de animação
+        anim.SetBool("DeadAnim", true);
+        yield return new WaitForSeconds(1); // setar o tempo correto de animação
         Destroy(gameObject);
         yield return null;
     }
