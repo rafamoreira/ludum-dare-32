@@ -5,12 +5,14 @@ public class BeamController : MonoBehaviour {
 
     GameObject beam;
     BeamMovement beamMovement;
+    LightDetect lightDetect;
     int beamRoutine;
     float timer;
     bool routineStarted;
 
 	void Start () 
     {
+        lightDetect = GameObject.Find("Player").GetComponent<LightDetect>();
         beam = GameObject.Find("Beam");
         beamMovement = beam.GetComponent<BeamMovement>();
         beamRoutine = 0;
@@ -54,18 +56,22 @@ public class BeamController : MonoBehaviour {
     IEnumerator Beam1 ()
     {
         beam.SetActive(false);
+        lightDetect.onLight = false;
         yield return new WaitForSeconds(0.1f);
         beam.SetActive(true);
         yield return new WaitForSeconds(0.1f);
         beam.SetActive(false);
+        lightDetect.onLight = false;
         yield return new WaitForSeconds(0.2f);
         beam.SetActive(true);
         yield return new WaitForSeconds(0.2f);
         beam.SetActive(false);
+        lightDetect.onLight = false;
         yield return new WaitForSeconds(0.3f);
         beam.SetActive(true);
         yield return new WaitForSeconds(0.3f);
         beam.SetActive(false);
+        lightDetect.onLight = false;
         yield return new WaitForSeconds(0.4f);
         beam.transform.Rotate(0, 0, beam.transform.rotation.z + Random.Range(45, 190));
         beam.SetActive(true);
