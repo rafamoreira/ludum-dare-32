@@ -12,7 +12,7 @@ public class EnemyFollow : MonoBehaviour {
 	void Start () 
     {
         player = GameObject.Find("Player");
-        speed = Random.Range(0.5f, 2f);
+        speed = Random.Range(0.5f, 1.5f);
         rotSpeed = Random.Range(1, 11);
         isAlive = true;
 	}
