@@ -12,15 +12,20 @@ public class GameManager : MonoBehaviour {
     public int enemiesOnScreen;
     public bool endScreen;
     public GameObject endObject;
+    public bool started;
+    public Text countdown;
 
 	// Use this for initialization
 	void Start () 
     {
         points = 0;
         time = 0;
-        isRunning = true;
-        enemiesOnScreen = 1;
+        isRunning = false;
         endScreen = false;
+        started = false;
+        Time.timeScale = 0;
+        enemiesOnScreen = 1;
+        StartCoroutine("StartGame");
 	}
 	
 	// Update is called once per frame
@@ -30,7 +35,7 @@ public class GameManager : MonoBehaviour {
         {
             time += Time.deltaTime;
         }
-        if (!isRunning && !endScreen)
+        if (started && !isRunning && !endScreen)
         {
             Time.timeScale = 0;
             endScreen = true;
@@ -62,5 +67,37 @@ public class GameManager : MonoBehaviour {
     public void End()
     {
         isRunning = false;
+    }
+
+    IEnumerator StartGame()
+    {
+        float time = 1;
+        float start = Time.realtimeSinceStartup;
+
+        countdown.text = "3";
+        while(Time.realtimeSinceStartup < start + time)
+            yield return null;
+
+        start = Time.realtimeSinceStartup;
+        countdown.text = "2";
+        while (Time.realtimeSinceStartup < start + time)
+            yield return null;
+
+        start = Time.realtimeSinceStartup;
+        countdown.text = "1";
+        while (Time.realtimeSinceStartup < start + time)
+            yield return null;
+
+        start = Time.realtimeSinceStartup;
+        time = 0.5f;
+        countdown.text = "Go!";
+        while (Time.realtimeSinceStartup < start + time)
+            yield return null;
+
+        countdown.text = "";
+        Time.timeScale = 1;
+        isRunning = true;
+        started = true;
+        
     }
 }
