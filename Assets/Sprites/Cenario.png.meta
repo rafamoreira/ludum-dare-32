@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 77329a22e243b9e4c8b09066a57cb175
-timeCreated: 1429464809
+timeCreated: 1429556353
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -8,6 +8,8 @@ TextureImporter:
     21300002: Outter
     21300004: BEAM
     21300006: BOX
+    21300008: Heart-ON
+    21300010: Heart-OFF
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -90,6 +92,26 @@ TextureImporter:
         y: 30
         width: 1305
         height: 1304
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Heart-ON
+      rect:
+        serializedVersion: 2
+        x: 3399
+        y: 1223
+        width: 636
+        height: 577
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Heart-OFF
+      rect:
+        serializedVersion: 2
+        x: 3399
+        y: 523
+        width: 636
+        height: 576
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
