@@ -7,14 +7,16 @@ public class LightDetect : MonoBehaviour
     public bool onLight = false;
     public GameObject laser;
     
-    void OnTriggerEnter2D()
+    void OnTriggerEnter2D(Collider2D other)
     {
-        onLight = true;
+        if(other.tag == "LightBeam")
+            onLight = true;
     }
 
-    void OnTriggerExit2D()
+    void OnTriggerExit2D(Collider2D other)
     {
-        onLight = false;
+        if(other.tag == "LightBeam")
+            onLight = false;
     }
 
     void Update ()

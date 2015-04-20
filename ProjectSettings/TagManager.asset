@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Enemy
   - Obstacle
+  - Spawner
+  - LightBeam
   layers:
   - Default
   - TransparentFX
