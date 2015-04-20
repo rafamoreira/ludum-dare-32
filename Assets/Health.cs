@@ -7,23 +7,22 @@ public class Health : MonoBehaviour {
     float maxHealth = 3.6f;
     float initialHealth;
     float currentHealth;
+    float healthBarSize;
+    public RectTransform healtbar;
 
 	// Use this for initialization
 	void Start () 
     {
         initialHealth = Random.Range(minHealth, maxHealth);
         currentHealth = initialHealth;
+        healthBarSize = healtbar.sizeDelta.x;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-	    //Debug.Log("%: " +  (currentHealth / initialHealth) * 100 );
+        float healthpc = currentHealth / initialHealth;
+        healtbar.sizeDelta = new Vector2(healthBarSize * healthpc, healtbar.sizeDelta.y);
 	}
-
-    void OnGUI()
-    {
-        GUI.Box(new Rect(0, 0, 100, 100), ((currentHealth / initialHealth) * 100).ToString() + "%");
-    }
 
     public void TakeHit()
     {
