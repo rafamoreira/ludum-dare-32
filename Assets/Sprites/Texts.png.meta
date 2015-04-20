@@ -1,11 +1,12 @@
 fileFormatVersion: 2
 guid: 9c521bb448cc00941b88f7a272c55e6e
-timeCreated: 1429558318
+timeCreated: 1429563628
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
     21300000: GameOver
     21300002: Restart
+    21300004: Start
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -68,6 +69,16 @@ TextureImporter:
         y: 22
         width: 2014
         height: 543
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Start
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 952
+        width: 1493
+        height: 417
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
