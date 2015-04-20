@@ -10,7 +10,7 @@ GameObject:
   - 4: {fileID: 460590}
   - 212: {fileID: 21207556}
   - 95: {fileID: 9589010}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Character Sprite Sheet_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26,7 +26,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 473024}
   - 120: {fileID: 12067684}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Laser
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42,7 +42,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 403318}
   - 114: {fileID: 11461750}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -60,11 +60,9 @@ GameObject:
   - 114: {fileID: 11449120}
   - 50: {fileID: 5070716}
   - 58: {fileID: 5822684}
-  - 23: {fileID: 2394024}
-  - 33: {fileID: 3333760}
   - 114: {fileID: 11492724}
   - 114: {fileID: 11449914}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -122,37 +120,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 403318}
   m_RootOrder: 0
---- !u!23 &2394024
-MeshRenderer:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 176462}
-  m_Enabled: 0
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_Materials:
-  - {fileID: 0}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 1
-  m_ReflectionProbeUsage: 1
-  m_ProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
---- !u!33 &3333760
-MeshFilter:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 176462}
-  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!50 &5070716
 Rigidbody2D:
   m_ObjectHideFlags: 1
@@ -222,7 +189,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 0
-  healthGUI: {fileID: 0}
+  heart1: {fileID: 0}
+  heart2: {fileID: 0}
+  heart3: {fileID: 0}
+  heartFull: {fileID: 21300008, guid: 77329a22e243b9e4c8b09066a57cb175, type: 3}
+  heartEmpty: {fileID: 21300010, guid: 77329a22e243b9e4c8b09066a57cb175, type: 3}
 --- !u!114 &11461750
 MonoBehaviour:
   m_ObjectHideFlags: 1
