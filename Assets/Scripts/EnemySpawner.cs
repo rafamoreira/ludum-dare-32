@@ -6,14 +6,29 @@ public class EnemySpawner : MonoBehaviour {
     public Transform[] spawnPoints;
     public Transform prefab;
     GameManager gameManager;
+    float timer;
+    float timeMax = 3f;
+    float timeMin = 1f;
 
     void Start()
     {
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        timer = Random.Range(timeMin, timeMax);
     }
 
     void Update()
     {
+        timer -= Time.deltaTime;
+        
+        if(timer <= 0)
+        {
+            if(gameManager.enemiesOnScreen <= 5)
+            {
+                Spawn();
+            }
+            timer = Random.Range(timeMin, timeMax);
+        }
+
         if (Input.GetKeyDown(KeyCode.Space))
             Spawn();
     }

@@ -32,6 +32,7 @@ public class GameManager : MonoBehaviour {
     public void AddPoints()
     {
         points += 1;
+        enemiesOnScreen -= 1;
     }
 
     void OnGUI()
