@@ -10,6 +10,8 @@ public class Health : MonoBehaviour {
     float healthbarSize;
     public RectTransform healthbar;
     GameManager gameManager;
+    bool isAlive;
+    EnemyFollow enemyFollow;
 
 	// Use this for initialization
 	void Start () 
@@ -17,8 +19,9 @@ public class Health : MonoBehaviour {
         initialHealth = Random.Range(minHealth, maxHealth);
         currentHealth = initialHealth;
         healthbarSize = healthbar.sizeDelta.x;
-
+        isAlive = true;
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        enemyFollow = GetComponent<EnemyFollow>();
 	}
 	
 	// Update is called once per frame
@@ -26,8 +29,8 @@ public class Health : MonoBehaviour {
         float healthpc = currentHealth / initialHealth;
         healthbar.sizeDelta = new Vector2(healthbarSize * healthpc, healthbar.sizeDelta.y);
 
-        if (currentHealth <= 0)
-            DeathRoutine();
+        if (currentHealth <= 0 && isAlive)
+            StartCoroutine("DeathRoutine");
 	}
 
     public void TakeHit()
@@ -35,9 +38,15 @@ public class Health : MonoBehaviour {
         currentHealth -= Time.deltaTime;
     }
 
-    void DeathRoutine()
+    IEnumerator DeathRoutine()
     {
         gameManager.AddPoints();
+        isAlive = false;
+        enemyFollow.isAlive = false;
+        
+        // adicionar codigo para animação
+        yield return new WaitForSeconds(3); // setar o tempo correto de animação
         Destroy(gameObject);
+        yield return null;
     }
 }

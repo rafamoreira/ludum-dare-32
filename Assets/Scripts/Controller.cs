@@ -5,15 +5,21 @@ public class Controller : MonoBehaviour
 {
     Rigidbody2D myRigidbody;
     public float playerSpeed = 3;
+    Animator anim;
 
     void Start ()
     {
         myRigidbody = GetComponent<Rigidbody2D>();
+        anim = GetComponentInChildren<Animator>();
     }
 
 	void Update () 
     {
         Rotate();
+        if (myRigidbody.velocity.x == 0 && myRigidbody.velocity.y == 0)
+            anim.SetBool("Movement", false);
+        else
+            anim.SetBool("Movement", true);
 	}
 
     void FixedUpdate()

@@ -1213,21 +1213,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c01323e6a377acb4b88be03f749588d5, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &862762619 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 198060, guid: f13d0a094968e144ba121669bb0e1f87, type: 2}
-  m_PrefabInternal: {fileID: 1659452585}
---- !u!114 &862762622
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 862762619}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a24115c36e396d4e8e164aa548895b9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &886170983
 GameObject:
   m_ObjectHideFlags: 0
@@ -2138,22 +2123,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
-    - target: {fileID: 6033138, guid: f13d0a094968e144ba121669bb0e1f87, type: 2}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 21280424, guid: f13d0a094968e144ba121669bb0e1f87, type: 2}
-      propertyPath: m_SortingOrder
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 198060, guid: f13d0a094968e144ba121669bb0e1f87, type: 2}
-      propertyPath: m_TagString
-      value: Untagged
-      objectReference: {fileID: 0}
-    - target: {fileID: 108378, guid: f13d0a094968e144ba121669bb0e1f87, type: 2}
-      propertyPath: m_TagString
-      value: LightBeam
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f13d0a094968e144ba121669bb0e1f87, type: 2}
   m_IsPrefabParent: 0
@@ -2534,6 +2503,10 @@ Prefab:
       propertyPath: m_Name
       value: Enemy 1
       objectReference: {fileID: 0}
+    - target: {fileID: 183780, guid: f9859a6ead42f7847a30bb28e07b53d8, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f9859a6ead42f7847a30bb28e07b53d8, type: 2}
   m_IsPrefabParent: 0
@@ -2580,6 +2553,8 @@ Prefab:
       propertyPath: healthGUI
       value: 
       objectReference: {fileID: 370490632}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2394024, guid: 53dec34ded2623e49ad4ce70d73e7b93, type: 2}
+    - {fileID: 3333760, guid: 53dec34ded2623e49ad4ce70d73e7b93, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 53dec34ded2623e49ad4ce70d73e7b93, type: 2}
   m_IsPrefabParent: 0

@@ -11,7 +11,7 @@ GameObject:
   - 60: {fileID: 6033138}
   m_Layer: 0
   m_Name: Collider
-  m_TagString: Untagged
+  m_TagString: LightBeam
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -25,6 +25,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 464662}
   - 212: {fileID: 21280424}
+  - 114: {fileID: 11422842}
   m_Layer: 0
   m_Name: Beam
   m_TagString: Untagged
@@ -51,7 +52,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 198060}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: .129999995, z: 0}
+  m_LocalPosition: {x: -.0109072924, y: .206025511, z: 0}
   m_LocalScale: {x: 2.51206994, y: 2.51206994, z: 2.03544784}
   m_Children:
   - {fileID: 436626}
@@ -65,7 +66,7 @@ PolygonCollider2D:
   m_GameObject: {fileID: 108378}
   m_Enabled: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   m_Points:
@@ -75,6 +76,17 @@ PolygonCollider2D:
       - {x: 1.20977628, y: -6.01824713}
       - {x: .889451981, y: -5.9923315}
       - {x: -.0180559289, y: 3.35421205}
+--- !u!114 &11422842
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 198060}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a24115c36e396d4e8e164aa548895b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &21280424
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -98,7 +110,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 9
   m_Sprite: {fileID: 21300004, guid: 77329a22e243b9e4c8b09066a57cb175, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: .352941185}
 --- !u!1001 &100100000
