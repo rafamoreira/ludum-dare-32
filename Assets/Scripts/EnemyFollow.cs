@@ -5,11 +5,14 @@ public class EnemyFollow : MonoBehaviour {
 
     GameObject player;
     public float speed = 1;
+    public float rotSpeed;
 
 	// Use this for initialization
 	void Start () 
     {
         player = GameObject.Find("Player");
+        speed = Random.Range(0.5f, 2f);
+        rotSpeed = Random.Range(1, 11);
 	}
 	
 	// Update is called once per frame
@@ -20,6 +23,12 @@ public class EnemyFollow : MonoBehaviour {
         Vector3 vectorToTarget = player.transform.position - transform.position;
         float angle = (Mathf.Atan2(vectorToTarget.y, vectorToTarget.x) * Mathf.Rad2Deg) - 90;
         Quaternion q = Quaternion.AngleAxis(angle, Vector3.forward);
-        transform.rotation = Quaternion.Slerp(transform.rotation, q, Time.deltaTime * 10);
+        transform.rotation = Quaternion.Slerp(transform.rotation, q, Time.deltaTime * rotSpeed);
 	}
+
+    void OnCollisionEnter2D(Collision2D hit)
+    {
+        if (hit.transform.tag == "Player")
+            hit.transform.SendMessage("TakeHitPlayer");
+    }
 }

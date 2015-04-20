@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour {
     public bool isRunning;
     public Text scoreGUI;
     public Text timerGUI;
+    public int enemiesOnScreen;
 
 	// Use this for initialization
 	void Start () 
@@ -16,6 +17,7 @@ public class GameManager : MonoBehaviour {
         points = 0;
         time = 0;
         isRunning = true;
+        enemiesOnScreen = 1;
 	}
 	
 	// Update is called once per frame
@@ -24,8 +26,6 @@ public class GameManager : MonoBehaviour {
         if(isRunning)
         {
             time += Time.deltaTime;
-
-
         }
 	}
 
@@ -44,5 +44,8 @@ public class GameManager : MonoBehaviour {
         timerGUI.text = string.Format("{0:0}:{1:00}", minutes, seconds);
     }
 
-
+    public void AddEnemy()
+    {
+        enemiesOnScreen += 1;
+    }
 }
