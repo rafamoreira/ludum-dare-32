@@ -6,7 +6,7 @@ public class LightDetect : MonoBehaviour
 
     public bool onLight = false;
     public GameObject laser;
-
+    
     void OnTriggerEnter2D()
     {
         onLight = true;

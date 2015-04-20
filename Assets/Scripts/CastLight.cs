@@ -5,9 +5,7 @@ public class CastLight : MonoBehaviour
 {
 
     public LayerMask mask;
-
     int rayLenghtDefault = 4;
-
     LineRenderer lightRenderer;
     LightDetect lightDetect;
 
@@ -26,9 +24,13 @@ public class CastLight : MonoBehaviour
             if (hit.collider != null)
             {
                 lightRenderer.SetPosition(1, new Vector3(0, 0, hit.distance * 2));
-                Debug.Log(hit.distance);
-                Debug.Log(hit.collider.name);
+                if(hit.collider.tag == "Enemy")
+                {
+                    hit.collider.SendMessage("TakeHit");
+                }
             }
+            else
+                lightRenderer.SetPosition(1, new Vector3(0, 0, 8));
         }
 	}
 }
