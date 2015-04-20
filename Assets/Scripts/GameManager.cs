@@ -10,6 +10,8 @@ public class GameManager : MonoBehaviour {
     public Text scoreGUI;
     public Text timerGUI;
     public int enemiesOnScreen;
+    public bool endScreen;
+    public GameObject endObject;
 
 	// Use this for initialization
 	void Start () 
@@ -18,6 +20,7 @@ public class GameManager : MonoBehaviour {
         time = 0;
         isRunning = true;
         enemiesOnScreen = 1;
+        endScreen = false;
 	}
 	
 	// Update is called once per frame
@@ -26,6 +29,12 @@ public class GameManager : MonoBehaviour {
         if(isRunning)
         {
             time += Time.deltaTime;
+        }
+        if (!isRunning && !endScreen)
+        {
+            Time.timeScale = 0;
+            endScreen = true;
+            endObject.SetActive(true);
         }
 	}
 
@@ -48,5 +57,10 @@ public class GameManager : MonoBehaviour {
     public void AddEnemy()
     {
         enemiesOnScreen += 1;
+    }
+
+    public void End()
+    {
+        isRunning = false;
     }
 }

@@ -13,6 +13,7 @@ public class PlayerHealth : MonoBehaviour
     public Sprite heartEmpty;
     SpriteRenderer spriteRenderer;
     Controller playerController;
+    bool invunerable;
 	
     // Use this for initialization
 	void Start () 
@@ -21,15 +22,21 @@ public class PlayerHealth : MonoBehaviour
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         playerController = GetComponent<Controller>();
+        invunerable = false;
 	}
 	
     public void TakeHitPlayer()
     {
-        health -= 1;
-        if(health >= 0)
+        if(!invunerable)
         {
-            StartCoroutine("PlayerHit");
+            invunerable = true;
+            health -= 1;
+            if (health >= 0)
+            {
+                StartCoroutine("PlayerHit");
+            }
         }
+        
     }
 
     void Update()
@@ -42,8 +49,7 @@ public class PlayerHealth : MonoBehaviour
 
     void DeathRoutine()
     {
-        gameManager.isRunning = false;
-        Debug.Log("Morreu");
+        gameManager.End();
     }
 
     void OnGUI()
@@ -101,6 +107,7 @@ public class PlayerHealth : MonoBehaviour
         spriteRenderer.enabled = true;
         playerController.playerSpeed = 2;
         Physics2D.IgnoreLayerCollision(10, 8, false);
+        invunerable = false;
         yield return null;
     }
 

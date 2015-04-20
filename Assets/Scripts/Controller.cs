@@ -6,16 +6,20 @@ public class Controller : MonoBehaviour
     Rigidbody2D myRigidbody;
     public float playerSpeed = 3;
     Animator anim;
+    GameManager gameManager;
 
     void Start ()
     {
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         myRigidbody = GetComponent<Rigidbody2D>();
         anim = GetComponentInChildren<Animator>();
     }
 
 	void Update () 
     {
-        Rotate();
+        if(gameManager.isRunning)
+            Rotate();
+        
         if (myRigidbody.velocity.x == 0 && myRigidbody.velocity.y == 0)
             anim.SetBool("Movement", false);
         else
