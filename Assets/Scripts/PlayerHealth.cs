@@ -2,6 +2,7 @@
 using System.Collections;
 using UnityEngine.UI;
 
+//[RequireComponent(typeof(AudioSource))]
 public class PlayerHealth : MonoBehaviour 
 {
     public int health;
@@ -14,6 +15,11 @@ public class PlayerHealth : MonoBehaviour
     SpriteRenderer spriteRenderer;
     Controller playerController;
     bool invunerable;
+
+    AudioSource myAudio;
+
+    public AudioClip hitSound;
+    public AudioClip gameOver;
 	
     // Use this for initialization
 	void Start () 
@@ -23,6 +29,7 @@ public class PlayerHealth : MonoBehaviour
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         playerController = GetComponent<Controller>();
         invunerable = false;
+        myAudio = GetComponent<AudioSource>();
 	}
 	
     public void TakeHitPlayer()
@@ -31,10 +38,14 @@ public class PlayerHealth : MonoBehaviour
         {
             invunerable = true;
             health -= 1;
+            
             if (health >= 0)
             {
+                myAudio.PlayOneShot(hitSound);
                 StartCoroutine("PlayerHit");
             }
+            else
+                myAudio.PlayOneShot(gameOver);
         }
         
     }

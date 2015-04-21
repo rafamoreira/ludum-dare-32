@@ -14,6 +14,8 @@ public class Health : MonoBehaviour {
     EnemyFollow enemyFollow;
 	Animator anim;
 
+    public AudioClip deathSound;
+
 	// Use this for initialization
 	void Start () 
     {
@@ -46,6 +48,7 @@ public class Health : MonoBehaviour {
         gameManager.AddPoints();
         isAlive = false;
         enemyFollow.isAlive = false;
+        GetComponent<AudioSource>().PlayOneShot(deathSound);
         
         anim.SetBool("DeadAnim", true);
         yield return new WaitForSeconds(1); // setar o tempo correto de animação
