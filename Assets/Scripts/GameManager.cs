@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour {
     public GameObject endObject;
     public bool started;
     public Text countdown;
+    EnemySpawner myEnemySpawner;
 
 	// Use this for initialization
 	void Start () 
@@ -26,6 +27,7 @@ public class GameManager : MonoBehaviour {
         Time.timeScale = 0;
         enemiesOnScreen = 1;
         StartCoroutine("StartGame");
+        myEnemySpawner = GameObject.Find("EnemySpawner").GetComponent<EnemySpawner>();
 	}
 	
 	// Update is called once per frame
@@ -47,6 +49,8 @@ public class GameManager : MonoBehaviour {
     {
         points += 1;
         enemiesOnScreen -= 1;
+
+        myEnemySpawner.CheckMaxEnemies(points);
     }
 
     void OnGUI()

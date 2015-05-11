@@ -7,12 +7,17 @@ public class EnemyFollow : MonoBehaviour {
     public float speed = 1;
     public float rotSpeed;
     public bool isAlive;
+    GameManager myGameManager;
 
 	// Use this for initialization
 	void Start () 
     {
+        myGameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         player = GameObject.Find("Player");
-        speed = Random.Range(0.5f, 1.5f);
+        if (myGameManager.points <= 15)
+          speed = Random.Range(0.5f, 1.5f);
+        else
+            speed = Random.Range(1f, 2f);
         rotSpeed = Random.Range(1, 11);
         isAlive = true;
 	}

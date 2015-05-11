@@ -25,9 +25,6 @@ public class CastLight : MonoBehaviour
 
             if (hit.collider != null)
             {
-				//Debug.DrawRay(transform.position, transform.forward, Color.magenta, 0.01f);
-
-				//Debug.Log(Mathf.Abs(hit.point.y - transform.position.y));
                 lightRenderer.SetPosition(1, new Vector3(0, 0, hit.distance * 2));
 
                 if(hit.collider.tag == "Enemy")
@@ -38,10 +35,7 @@ public class CastLight : MonoBehaviour
             else
 			{
 				lightRenderer.SetPosition(1, new Vector3(0, 0, 8));
-
 			}
-
-            
         }
 	}
 }
