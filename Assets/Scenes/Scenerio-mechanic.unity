@@ -1179,7 +1179,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 442928, guid: c01323e6a377acb4b88be03f749588d5, type: 2}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 144698, guid: c01323e6a377acb4b88be03f749588d5, type: 2}
       propertyPath: m_Name
@@ -3034,6 +3034,10 @@ Prefab:
       propertyPath: heart3
       value: 
       objectReference: {fileID: 1563585522}
+    - target: {fileID: 12067684, guid: 53dec34ded2623e49ad4ce70d73e7b93, type: 2}
+      propertyPath: m_UseWorldSpace
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 53dec34ded2623e49ad4ce70d73e7b93, type: 2}
   m_IsPrefabParent: 0
